@@ -30,4 +30,4 @@ fs.readdir(`./commands`, (err, directories) => {
   });
 });
 
-client.login('NDUxMTI5ODgxNzI0NDUyODY0.XsGsQA.cp2ehBHfj1VKzlFcuBnGuH8EPb8');
+client.login(process.env.BOT_TOKEN);
