@@ -3,7 +3,7 @@ let activity = require(`../resources/activity.json`);
 
 module.exports.run = async (client, message, args) => {
 	
-	client.user.setPresence({ activity: { name: '.help ' }, status: 'streaming' });
+	client.user.setPresence({ activity: { name: 'sa!help ' }, status: 'streaming' });
         
     console.log(" ###   #     #  #     #####  #     #  #####");
     console.log("#   #  # #   #  #       #    # #   #  #");
