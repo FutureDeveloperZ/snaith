@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
         color: "#000000",
         permissions:[]
              }
-           }
+           });
         }
       }
       
