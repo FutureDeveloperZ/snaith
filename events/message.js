@@ -12,7 +12,7 @@ module.exports.run = async(client, message) => {
 
 
     //Message.js update 12/08/18 - Ducky
-    var prefix = "f;";
+    var prefix = "sa!";
     if (message.author.bot) return;
     if (message.channel.type === 'dm') return;
     if(message.content.indexOf(prefix) !== 0) return;
