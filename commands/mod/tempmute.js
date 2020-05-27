@@ -10,7 +10,8 @@ module.exports.run = async (bot, message, args) => {
   let muterole = message.guild.roles.cache.find(role => role.name === config.mutedRole);
   if(!muterole){
     try{
-      muterole = await message.guild.createRole({
+      muterole = await guilds.roles.create({
+      	data : { 
         name: "muted",
         color: "#000000",
         permissions:[]
