@@ -17,7 +17,8 @@ module.exports.run = async (bot, message, args) => {
         permissions:[]
               }
            });
-         }
+            }catch(e){
+      console.log(e.stack);
      }
       
       message.guild.channels.cache.forEach(async (channel, id) => {
