@@ -1,0 +1,34 @@
+
+{
+  "__NOTICE:": "This is a Hard Json File Boi so try to make i work!",
+  
+  "prefix": "-",
+  "arcadia": "cd2df0e054e1e59e184fbf2d5386ce534e186b56a72ef39b424125d3d978788a",
+  "fortnite": "62bd4b2d-3a04-4bef-8c30-6321144acc96",
+  "fAPI": "9c380833a510e7191cb5c4c185a036",
+
+  "white": "#ffffff",
+  "red": "#ff0000",
+  "orange": "#ffa500",
+  "yellow": "#ffff00",
+  "green": "#00ff00",
+  "blue": "#0000ff",
+  "purple": "#551a8b",
+  "cyan": "#46CED5",
+  
+  "mainguild": "714478978865299466",
+  "juiceid": "ID of the Raspberry juice emoji",
+  "ownerid": "282978672711827456",
+  "logsChannel": "logs",
+
+  "blocked": [
+    "blocked",
+    "commands"
+  ],
+  
+  "blockedusers": [
+    "an array of",
+    "blocked users"
+  ]
+  
+}
