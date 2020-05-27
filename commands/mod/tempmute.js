@@ -15,6 +15,7 @@ module.exports.run = async (bot, message, args) => {
         name: "muted",
         color: "#000000",
         permissions:[]
+        });
         }
       
       message.guild.channels.cache.forEach(async (channel, id) => {
