@@ -1,0 +1,34 @@
+{
+  "name": "snaith",
+  "version": "0.2.0",
+  "description": "Skill Bot",
+  "main": "obama.js",
+  "dependencies": {
+    "apiai": "^4.0.3",
+    "ascii-art": "^1.5.0",
+    "chalk": "^4.0.0",
+    "cuteapi": "0.0.3",
+    "discord.js": "^12.2.0",
+    "fs": "0.0.1-security",
+    "ms": "^2.1.2",
+    "node-fetch": "^2.6.0",
+    "node-superfetch": "^0.1.10",
+    "quick.hook": "^1.5.1",
+    "random-puppy": "^1.1.0",
+    "remove-markdown": "^0.3.0",
+    "request": "^2.88.0",
+    "snekfetch": "^4.0.4",
+    "string": "^3.3.3",
+    "superagent": "^4.1.0",
+    "unirest": "^0.5.1",
+    "uws": "^100.0.1",
+    "xml2js": "^0.4.23",
+    "ytdl-core": "^2.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "f;"
+  },
+  "author": "Wolfkid",
+  "license": "MIT"
+}
