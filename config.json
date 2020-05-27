@@ -20,6 +20,7 @@
   "juiceid": "ID of the Raspberry juice emoji",
   "ownerid": "282978672711827456",
   "logsChannel": "logs",
+  "mutedRole": "muted",
 
   "blocked": [
     "blocked",
