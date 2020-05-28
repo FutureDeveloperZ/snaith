@@ -6,12 +6,12 @@ module.exports.run = async(client, member, args) => {
 
   //Update 12/08/18 - Ducky & WolfKid :)
   
-  // let username = member.user.username;
-  // let server = member.guild.name;
-  // let wcEmbed = new Discord.RichEmbed()
-  // .setAuthor("Welcome")
-  // .setDescription("Welcome " + "``" + username + "``" + " To The Official " + server + "Discord!")
-  // .setTimestamp()
-  // .setFooter("He Joined at")
-  // member.guild.channels.get("welcome").send(wcEmbed);
+   let username = member.user.username;
+   let server = member.guild.name;
+   let wcEmbed = new Discord.RichEmbed()
+   .setAuthor("Welcome")
+   .setDescription("Welcome " + "``" + username + "``" + " To The Official " + server + "Discord!")
+   .setTimestamp()
+   .setFooter("He Joined at")
+  member.guild.channels.get("・welcome-bye ").send(wcEmbed);
 };
