@@ -5,17 +5,16 @@ module.exports.run = async (bot, message, args, funcs) => {
     const {
       body
     } = await request
-      .get("https://www.reddit.com/r/nsfw.json")
+      .get("https://www.reddit.com/r/penis.json?sort=top&t=week")
       .query({
         limit: 800
       });
-    //const allowed = message.channel.nsfw ? body.data.children : body.data.children.filter(post => !post.data.over_18);
-    //if (!allowed.length) return send(`Can't find any other images right now, try again later.`);
+    if (!message.channel.nsfw) return message.reply(`Cannot send nsfw in a sfw channel.`);
     const allowed = body.data.children;
-    if (!message.channel.nsfw) return message.reply(`Cannot send NSFW content in a SFW channel.`);
+    if (!allowed.length) return funcs.send(`Can't find any other images right now, try again later.`);
     const randomnumber = Math.floor(Math.random() * allowed.length);
     const embed = new MessageEmbed()
-      .setColor("#FF0003")
+      .setColor("#FF0B00")
       .setTitle(allowed[randomnumber].data.title)
       .setDescription("Posted by: " + allowed[randomnumber].data.author)
       .setImage(allowed[randomnumber].data.url)
@@ -27,9 +26,9 @@ module.exports.run = async (bot, message, args, funcs) => {
 };
 
 module.exports.config = {
-  name: "porn",
+  name: "dick",
   aliases: [],
-  usage: "Use this command to get a nsfw image.",
+  usage: "Use this command to get an image with a dick from r/penis.",
   commandCategory: "nsfw",
   cooldownTime: '5'
 };

@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args, funcs) => {
     const {
       body
     } = await request
-      .get("https://www.reddit.com/r/nsfw.json")
+      .get("https://www.reddit.com/r/gonewild.json")
       .query({
         limit: 800
       });
@@ -15,10 +15,11 @@ module.exports.run = async (bot, message, args, funcs) => {
     if (!message.channel.nsfw) return message.reply(`Cannot send NSFW content in a SFW channel.`);
     const randomnumber = Math.floor(Math.random() * allowed.length);
     const embed = new MessageEmbed()
-      .setColor("#FF0003")
+      .setColor("#FF0030")
       .setTitle(allowed[randomnumber].data.title)
       .setDescription("Posted by: " + allowed[randomnumber].data.author)
       .setImage(allowed[randomnumber].data.url)
+      .setFooter("Image provided by r/gonewild");
     message.channel.send(embed);
   } catch (err) {
     console.log(err);
@@ -27,9 +28,9 @@ module.exports.run = async (bot, message, args, funcs) => {
 };
 
 module.exports.config = {
-  name: "porn",
+  name: "moreporn",
   aliases: [],
-  usage: "Use this command to get a nsfw image.",
+  usage: "Use this command to get even more porn.",
   commandCategory: "nsfw",
   cooldownTime: '5'
 };
