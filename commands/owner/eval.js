@@ -1,8 +1,8 @@
-const { MessageEmbed } = require("discord.js");
+const Discord = require("discord.js");
 const config = require('../../config.json');
 
 module.exports.run = async (bot, message, args) => {
- let embed = new MessageEmbed()
+ let embed = new Discord.MessageEmbed()
   .setTitle("Evaluation")
   .setDescription("Sorry, the `eval` command can only be executed by the Main Developer.")
   .setColor("#cdf785");
@@ -18,15 +18,15 @@ module.exports.run = async (bot, message, args) => {
       let rawEvaled = evaled;
       if (typeof evaled !== "string")
         evaled = require("util").inspect(evaled);
-      let noarg = new MessageEmbed()
+      let noarg = new Discord.MessageEmbed()
          .setColor("RED")
          .setTimestamp()
-         .setFooter(`Requested ${message.author.tag}`, `${message.author.avatarURL}`)
+         .setFooter(`Requested ${message.author.tag}`)
          .setTitle("Usage: eval <eval crap>")
 
       if(!code) return message.channel.send(noarg)
  
-  let embed = new MessageEmbed()
+  let embed = new Discord.MessageEmbed()
       .setTitle(`Evaluated in ${Math.round(bot.ping)}ms`)
       .addField(":inbox_tray: Input", `\`\`\`js\n${code}\n\`\`\``)
       .addField(":outbox_tray: Output", `\`\`\`js\n${clean(evaled).replace(bot.token, "Are you retarded?")}\n\`\`\``)
