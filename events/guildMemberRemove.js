@@ -1,3 +1,4 @@
+let Discord = require("discord.js");
 module.exports.run = async (client, member, args) => {
     let welcomechannel = member.guild.channels.cache.find(c => c.name === `・welcome-bye`);
     if (!welcomechannel) return member.guild.createChannel(c => c.name === "text");
