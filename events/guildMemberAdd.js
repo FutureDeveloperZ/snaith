@@ -14,5 +14,5 @@ module.exports.run = async(client, member, args) => {
    .setTimestamp()
    .setFooter("He Joined at")
   member.guild.channels.cache.get("・welcome-bye ")
-return send(wcEmbed);
+return message.channel.send(wcEmbed);
 };

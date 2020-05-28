@@ -13,5 +13,5 @@ module.exports.run = async (client, member, args) => {
         .setFooter("He left At")
 
     member.guild.channels.cache.get("・welcome-bye ");
-    return send(gbEmbed);
+    return message.channel.send(gbEmbed);
 };
