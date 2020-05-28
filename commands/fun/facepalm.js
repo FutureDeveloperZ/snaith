@@ -23,8 +23,7 @@ module.exports.run = async (bot, message, args, funcs) => {
       message.channel.send(embed);
     } catch (e) {
       return message.channel.send(`***Oh no, an error occurred: \`${e.message}\`. Try again later!***`);
-      message.channel.stopTyping();
-    }
+    }.then(() => message.channel.stopTyping());
   } catch (err) {
     console.log(err);
     funcs.send(`Oh no! An error occurred! \`${err.message}\`.`);
