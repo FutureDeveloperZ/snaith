@@ -13,5 +13,5 @@ module.exports.run = async(client, member, args) => {
    .setDescription("Welcome " + "``" + username + "``" + " To The Official " + server + "Discord!")
    .setTimestamp()
    .setFooter("He Joined at")
-  member.guild.channels.get("・welcome-bye ").send(wcEmbed);
+  member.guild.channels.cache.get("・welcome-bye ").send(wcEmbed);
 };
