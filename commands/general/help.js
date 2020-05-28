@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
       .addField('Administrator','``\nban``, ``kick``, ``report``, ``poll``, ``purge``')
       .addField('NSFW','``\nporn``, ``ecchi``, ``4k``, ``amateur``, ``anal``, ``ass``, ``asshole``, ``bbw``, ``bdsm``, ``bikinis``, ``blonde``, ``bottomless``, ``brunette``, ``collage``, ``cosplay``, ``curvy``, ``dick``, ``echhi``, ``furrynsfw``, ``gonewild``, ``lewd``, ``nsfw``, ``milf``, ``moreporn``, ``neko``, ``nude``, ``onoff``, ``petite``, ``porn``, ``porngif``, ``public``, ``pussy``, ``redhead``, ``redtube``, ``rule34``, ``snapchat``, ``tattos``, ``tits``, ``uniform``')
       .addField('Roleplay','``\nbite``,``crush``')
-      .addField('Miscellaneous ','``\nembed``')
+      .addField('Miscellaneous ','``\nembed``,``whois``')
       .setColor('#001AFF')
       .setTimestamp()
       .setFooter(`Requested by ${message.author.tag} | Help list`)
