@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const Discord = require('discord.js');
 const config = require('../../config.json');
 
 module.exports.run = async (client, message, args) => {
@@ -26,7 +26,7 @@ module.exports.run = async (client, message, args) => {
     playingStatus = 'None'
   }
 
-  let embed = new MessageEmbed()
+  let embed = new Discord.MessageEmbed()
     .setTitle(`Information about ${user.user.tag}`)
     .setColor(config.red)
     .setThumbnail(icon)
