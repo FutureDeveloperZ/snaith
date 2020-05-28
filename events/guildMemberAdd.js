@@ -8,7 +8,7 @@ module.exports.run = async(client, member, args) => {
   
    let username = member.user.username;
    let server = member.guild.name;
-   let wcEmbed = new Discord.RichEmbed()
+   let wcEmbed = new Discord.MessageEmbed()
    .setAuthor("Welcome")
    .setDescription("Welcome " + "``" + username + "``" + " To The Official " + server + "Discord!")
    .setTimestamp()
