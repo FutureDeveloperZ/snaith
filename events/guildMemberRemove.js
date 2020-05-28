@@ -8,7 +8,6 @@ module.exports.run = async (client, member, args) => {
     let gbEmbed = new Discord.MessageEmbed()
         .setTitle("Good Bye")
         .setDescription("Good Bye" + "``" + username + "``" + ". Hope to see u later")
-        .setThumbnail(icon)
         .setColor("RANDOM")
         .setTimestamp()
         .setFooter("He left At")
