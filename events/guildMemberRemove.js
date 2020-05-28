@@ -1,10 +1,10 @@
 module.exports.run = async (client, member, args) => {
-    let welcomechannel = member.guild.channels.find(c => c.name === `welcome`);
+    let welcomechannel = member.guild.channels.cache.find(c => c.name === `・welcome-bye`);
     if (!welcomechannel) return member.guild.createChannel(c => c.name === "text");
     let username = member.user.username;
     let server = member.guild.name;
     let players = member.guild.memberCount;
-    let gbEmbed = new Discord.RichEmbed()
+    let gbEmbed = new Discord.MessageEmbed()
         .setTitle("Good Bye")
         .setDescription("Good Bye" + "``" + username + "``" + ". Hope to see u later")
         .setThumbnail(icon)
