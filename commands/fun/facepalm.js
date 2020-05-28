@@ -1,6 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 const request = require('node-superfetch');
 module.exports.run = async (bot, message, args, funcs) => {
+	message.channel.startTyping();
   try {
     try {
       const {
@@ -11,7 +12,7 @@ module.exports.run = async (bot, message, args, funcs) => {
           limit: 800
         });
       const allowed = message.channel.nsfw ? body.data.children : body.data.children.filter(post => !post.data.over_18);
-      if (!allowed.length) return funcs.send(`Can't find any other images right now, try again later.`);
+      if (!allowed.length) return message.reply(`Can't find any other images right now, try again later.`);
       const randomnumber = Math.floor(Math.random() * allowed.length);
       const embed = new MessageEmbed()
         .setColor('#60FF00')
