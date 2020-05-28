@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args, funcs) => {
         .setTitle(allowed[randomnumber].data.title)
         .setDescription("Posted by: " + allowed[randomnumber].data.author)
         .setImage(allowed[randomnumber].data.url)
-        .setFooter("Image provided by r/memes");
+        .setFooter("Image provided by r/dankmemes");
       message.channel.send(embed);
     } catch (e) {
       return message.channel.send(`***Oh no, an error occurred: \`${e.message}\`. Try again later!***`);
