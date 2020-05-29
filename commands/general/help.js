@@ -1,11 +1,12 @@
 const { MessageEmbed } = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {      
+	message.channel.startTyping();
       const helpembed = new MessageEmbed()
       .setTitle('Help List ')
       .addField('Administrator','``\nban``, ``kick``, ``report``, ``poll``, ``purge``')
       .addField('NSFW','``\nporn``, ``ecchi``, ``4k``, ``amateur``, ``anal``, ``ass``, ``asshole``, ``bbw``, ``bdsm``, ``bikinis``, ``blonde``, ``bottomless``, ``brunette``, ``collage``, ``cosplay``, ``curvy``, ``dick``, ``echhi``, ``furrynsfw``, ``gonewild``, ``lewd``, ``nsfw``, ``milf``, ``moreporn``, ``neko``, ``nude``, ``onoff``, ``petite``, ``porn``, ``porngif``, ``public``, ``pussy``, ``redhead``, ``redtube``, ``rule34``, ``snapchat``, ``tattos``, ``tits``, ``uniform``')
-      .addField('Roleplay','``\nbite``,``crush``')
+      .addField('Roleplay','``\nbite``,``crush``,``cuddle``,``dropkick``')
       .addField('Memes','``\nmeme``,``dankmemes``,``facepalm``')
       .addField('Miscellaneous ','``\nembed``,``whois``')
       .setColor('#001AFF')
@@ -14,6 +15,8 @@ module.exports.run = async (bot, message, args) => {
       return message.channel.send(helpembed);
 
 }
+return message.channel.stopTyping();
+ }
  
 module.exports.help = {
   name: "help"
