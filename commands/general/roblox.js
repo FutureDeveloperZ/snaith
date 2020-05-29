@@ -1,14 +1,14 @@
 const { MessageEmbed } = require('discord.js');
 const request = require('node-superfetch');
 module.exports.run = async (bot, message, args, funcs) => {
- if (!message.channel.nsfw) return message.reply("Cannot send NSFW content in a SFW channel.");
+  if (!message.channel.nsfw) return message.reply("Cannot send NSFW content in a SFW channel.");
     try {
         let saybot = args.join('_');
         const url = `https://api.roblox.com/users/get-by-username?username=${saybot}`;
         request.get(url).then(result => {
           const data = result.body.Id;
-          if (saybot.length < 1) return message.reply("Please provide a username to search for.");
-          if (result.body.Id === "undefined") return message.reply("Couldn't find a roblox user by the name of " + saybot + ".");
+          if (saybot.length < 1) return send("Please provide a username to search for.");
+          if (result.body.Id === "undefined") return send("Couldn't find a roblox user by the name of " + saybot + ".");
           const url2 = `https://api.roblox.com/ownership/hasasset?userId=${data}&assetId=102611803`;
           request.get(url2).then(a => {
             const Verifiedcheck = a.body;
@@ -28,7 +28,7 @@ module.exports.run = async (bot, message, args, funcs) => {
       } catch (err) {
         if (err.status === 404) return msg.say('Could not find any results.');
         console.log(err);
-        return message.reply(`Oh no, an error occurred: \`${err.message}\`. Try again later!`);
+        return funcs.send(`Oh no, an error occurred: \`${err.message}\`. Try again later!`);
     }
 };
 
