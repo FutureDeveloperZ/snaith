@@ -13,11 +13,16 @@ module.exports.run = async (bot, message, args) => {
       .setTimestamp()
       .setFooter(`Requested by ${message.author.tag} | Help list`)
       return message.channel.send(helpembed);
-
-}
-return message.channel.stopTyping();
- }
- 
+     
+    } catch (e) {
+      return message.channel.send(`***Oh no, an error occurred: \`${e.message}\`. Try again later!***`);
+    }
+    return message.channel.stopTyping();
+  } catch (err) {
+    console.log(err);
+    message.reply(`Oh no! An error occurred! \`${err.message}\`.`);
+  }
+  
 module.exports.help = {
   name: "help"
 }
