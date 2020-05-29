@@ -1,7 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 const request = require('node-superfetch');
 module.exports.run = async (bot, message, args, funcs) => {
-	message.channel.startTyping();
+	message.channel.startTyping(5);
   try {
     try {
       const {
