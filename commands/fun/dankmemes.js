@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args, funcs) => {
           limit: 800
         });
       const allowed = message.channel.nsfw ? body.data.children : body.data.children.filter(post => !post.data.over_18);
-      if (!allowed.length) return funcs.send(`Can't find any other images right now, try again later.`);
+      if (!allowed.length) return message.reply(`Can't find any other images right now, try again later.`);
       const randomnumber = Math.floor(Math.random() * allowed.length);
       const embed = new MessageEmbed()
         .setColor('#60FF00')
@@ -27,7 +27,7 @@ module.exports.run = async (bot, message, args, funcs) => {
     return message.channel.stopTyping();
   } catch (err) {
     console.log(err);
-    funcs.send(`Oh no! An error occurred! \`${err.message}\`.`);
+    message.reply(`Oh no! An error occurred! \`${err.message}\`.`);
   }
 };
 
