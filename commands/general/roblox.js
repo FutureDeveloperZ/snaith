@@ -1,7 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 const request = require('node-superfetch');
 module.exports.run = async (bot, message, args, funcs) => {
-//  if (!message.channel.nsfw) //return message.reply("Cannot send NSFW content in a SFW channel.");
+ if (!message.channel.sfw) return message.reply("Cannot send NSFW content in a SFW channel.");
     try {
         let saybot = args.join('_');
         const url = `https://api.roblox.com/users/get-by-username?username=${saybot}`;
