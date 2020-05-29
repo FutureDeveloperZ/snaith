@@ -13,6 +13,6 @@ module.exports.run = async(client, member, message, args) => {
    .setDescription("Welcome " + "``" + username + "``" + " To The Official " + server + "Discord!")
    .setTimestamp()
    .setFooter("He Joined at")
-  member.guild.channels.cache.get("・welcome-bye ")
+  member.guild.channels.cache.find("・welcome-bye ")
 return message.channel.send(wcEmbed);
 };
