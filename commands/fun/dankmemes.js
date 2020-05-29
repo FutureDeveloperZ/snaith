@@ -1,7 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 const request = require('node-superfetch');
 module.exports.run = async (bot, message, args, funcs) => {
-	message.channel.startTyping(5);
+	message.channel.startTyping();
   try {
     try {
       const {
@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args, funcs) => {
     } catch (e) {
       return message.channel.send(`***Oh no, an error occurred: \`${e.message}\`. Try again later!***`);
     }
-    return message.channel.stopTyping(0);
+    return message.channel.stopTyping();
   } catch (err) {
     console.log(err);
     message.reply(`Oh no! An error occurred! \`${err.message}\`.`);
