@@ -1,6 +1,6 @@
 let Discord = require("discord.js");
 
-module.exports.run = async(client, member, message, args) => {
+module.exports.run = async(client, member, message, args, funcs) => {
   //Alt checker (7 days old) - Ducky & Wolfkid :) (Hopefully 12/08/18)
 
 
