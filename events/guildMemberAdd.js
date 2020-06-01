@@ -45,4 +45,4 @@ module.exports.run = async(client, member, args) => {
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
 
 	channel.send(`Welcome to the server, ${member}!`, attachment);
-});
+};
