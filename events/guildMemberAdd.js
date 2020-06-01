@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const Canvas = require("canvas");
 
-const applyText = (canvas, text) => {
+// const applyText = (canvas, text) => {
 	const ctx = canvas.getContext('2d');
 	let fontSize = 70;
 
@@ -13,9 +13,9 @@ const applyText = (canvas, text) => {
 };
 
 
-module.exports.run = async(client, member, args) => {
-	const channel = member.guild.channels.cache.find(ch => ch.name === '・gate');
-	if (!channel) return;
+// module.exports.run = async(client, member, args) => {
+	// const channel = member.guild.channels.cache.find(ch => ch.name === '・gate');
+	// if (!channel) return;
 
 	const canvas = Canvas.createCanvas(700, 250);
 	const ctx = canvas.getContext('2d');
@@ -44,5 +44,5 @@ module.exports.run = async(client, member, args) => {
 
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
 
-	channel.send(`Welcome to the server, ${member}!`, attachment);
+	// channel.send(`Welcome to the server, ${member}!`, attachment);
 };
