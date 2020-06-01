@@ -2,7 +2,11 @@ const Discord = require("discord.js");
 const Canvas = require("canvas");
 
 
-module.exports.run = async(client, member, message, args, funcs) => {
+const client = new Discord.Client();
+
+client.once('ready', () => {
+	console.log('AddMember working!');
+});
 
 const applyText = (canvas, text) => {
 	const ctx = canvas.getContext('2d');
@@ -47,12 +51,6 @@ client.on('guildMemberAdd', async member => {
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
 
 	channel.send(`Welcome to the server, ${member}!`, attachment);
-});
-
-client.on('message', message => {
-	if (message.content === '!join') {
-		client.emit('guildMemberAdd', message.member);
-	}
 });
 
 };
