@@ -12,7 +12,6 @@ const applyText = (canvas, text) => {
 	return ctx.font;
 };
 
-client.on('guildMemberAdd', async member => {
 	const channel = member.guild.channels.cache.find(ch => ch.name === 'logs');
 	if (!channel) return;
 
