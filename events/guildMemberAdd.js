@@ -53,4 +53,3 @@ client.on('guildMemberAdd', async member => {
 	channel.send(`Welcome to the server, ${member}!`, attachment);
 });
 
-};
