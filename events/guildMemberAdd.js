@@ -45,4 +45,4 @@ const Canvas = require("canvas");
 	// const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
 
 	// channel.send(`Welcome to the server, ${member}!`, attachment);
-};
+// };
