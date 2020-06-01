@@ -4,6 +4,17 @@ const Canvas = require("canvas");
 
 module.exports.run = async(client, member, message, args, funcs) => {
 
+const applyText = (canvas, text) => {
+	const ctx = canvas.getContext('2d');
+	let fontSize = 70;
+
+	do {
+		ctx.font = `${fontSize -= 10}px sans-serif`;
+	} while (ctx.measureText(text).width > canvas.width - 300);
+
+	return ctx.font;
+};
+
 client.on('guildMemberAdd', async member => {
 	const channel = member.guild.channels.cache.find(ch => ch.name === 'logs');
 	if (!channel) return;
@@ -17,12 +28,10 @@ client.on('guildMemberAdd', async member => {
 	ctx.strokeStyle = '#74037b';
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
-	// Slightly smaller text placed above the member's display name
 	ctx.font = '28px sans-serif';
 	ctx.fillStyle = '#ffffff';
 	ctx.fillText('Welcome to the server,', canvas.width / 2.5, canvas.height / 3.5);
 
-	// Add an exclamation point here and below
 	ctx.font = applyText(canvas, `${member.displayName}!`);
 	ctx.fillStyle = '#ffffff';
 	ctx.fillText(`${member.displayName}!`, canvas.width / 2.5, canvas.height / 1.8);
@@ -40,5 +49,10 @@ client.on('guildMemberAdd', async member => {
 	channel.send(`Welcome to the server, ${member}!`, attachment);
 });
 
+client.on('message', message => {
+	if (message.content === '!join') {
+		client.emit('guildMemberAdd', message.member);
+	}
+});
 
 };
