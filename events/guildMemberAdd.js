@@ -14,7 +14,7 @@ const applyText = (canvas, text) => {
 
 
 module.exports.run = async(client, member, args) => {
-	const channel = member.guild.channels.cache.find(ch => ch.name === 'logs');
+	const channel = member.guild.channels.cache.find(ch => ch.name === '・gate');
 	if (!channel) return;
 
 	const canvas = Canvas.createCanvas(700, 250);
