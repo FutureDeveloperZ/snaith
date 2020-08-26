@@ -1,1 +1,1 @@
-worker: node obama.js
+worker: node index.js
